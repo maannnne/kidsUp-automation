@@ -24,6 +24,7 @@ module.exports['default'] = class Register extends Base{
     get SBRegPageHeaderEng() {return 'Create your brand new profile in KidsUp!'};
     get SBRegPageTitle() {return 'Register'};
     get SBLoginPageTitle() {return 'Login'};
+    get SBWelcomePageTitle() {return 'Home'};
     get SBHaveAccMessage() {return 'Already have an account? Log In!'};
 
 
@@ -43,6 +44,9 @@ module.exports['default'] = class Register extends Base{
     getSBHaveAccMessage() {
         return this.SBHaveAccMessage;
     };
+    getSBWelcomePageTitle() {
+        return this.SBWelcomePageTitle;
+    }
 
 
 
@@ -51,68 +55,68 @@ module.exports['default'] = class Register extends Base{
     //methods
     getRegPageHeader() {
         this.regPageHeader.waitForExist();
-        //browser.pause(3000);
+        //browser.pause(1000);
         return browser.$(this.regPageHeader).getText();
     };
 
     getHaveAccMessage() {
         this.haveAccMessage.waitForExist();
-        //browser.pause(3000);
+        //browser.pause(1000);
         return browser.$(this.haveAccMessage).getText();
     };
 
     setEmail(email) {
         this.newUserEmail.waitForExist();
         this.newUserEmail.setValue(email);
-        //browser.pause(3000);
+        //browser.pause(1000);
     };
 
     setName(name) {
         this.newUserName.waitForExist();
         this.newUserName.setValue(name);
-        //browser.pause(3000);
+        //browser.pause(1000);
     };
 
     setPass(pass) {
-        this.newUserName.waitForExist();
-        this.newUserName.setValue(pass);
-        //browser.pause(3000);
+        this.newUserPass.waitForExist();
+        this.newUserPass.setValue(pass);
+        //browser.pause(1000);
     };
 
     setConfPass(confPass) {
-        this.newUserName.waitForExist();
-        this.newUserName.setValue(confPass);
-        //browser.pause(3000);
+        this.newUserConfPass.waitForExist();
+        this.newUserConfPass.setValue(confPass);
+        //browser.pause(1000);
     };
 
     clickOnRegisterButton() {
         this.registerButton.waitForExist();
         this.registerButton.click();
-        //browser.pause(3000);
+        //browser.pause(1000);
     };
 
     clickOnLanguageButton() {
         this.languageButton.waitForExist();
         this.languageButton.click();
-        //browser.pause(3000);
+        //browser.pause(1000);
     };
 
     setLangToArm() {
         this.langArm.waitForExist();
         this.langArm.click();
-        //browser.pause(3000);
+        //browser.pause(1000);
     };
 
     setLangToEng() {
         this.langEng.waitForExist();
         this.langEng.click();
-        //browser.pause(3000);
+        //browser.pause(1000);
     };
 
     clickOnLoginLink() {
         this.loginLink.waitForExist();
         this.loginLink.click();
-        //browser.pause(3000);
+        //browser.pause(1000);
     }
 
 

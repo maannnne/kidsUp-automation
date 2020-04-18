@@ -1,19 +1,19 @@
+const Base  = require('../pageObjects/base.page').default;
 module.exports['default'] = class RegisterData extends Base{
     constructor() {
         super();
     }
 
     //test data as getter functions
-    get testEmailValid() {return 'test1@test.com'};
+    get testEmailValid() {return 'testEmail11@test.com'};
     get testEmailInvalid1() {return 'testtesttest'};
     get testEmailInvalid2() {return 'testtest@'};
-    get testName() {return 'testName'};
+    get testName() {return 'testName11'};
     get testPass() {return 'testPass'};
     get confPassValid() {return 'testPass'};
     get confPassInvalid() {return 'testPasssssssss'};
 
     //methods
-
     getTestEmailValid() {
         return this.testEmailValid;
     };

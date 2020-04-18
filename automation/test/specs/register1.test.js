@@ -1,9 +1,15 @@
 const assert = require('assert');
-const RegisterPage  = require('../pageObjects/register.page').default;
+let RegisterPage;
+let registerPageObject;
+
+
+//hook to set up preconditions and clean up after tests
+beforeEach( () => {
+    RegisterPage = require('../pageObjects/register.page').default;
+    registerPageObject = new RegisterPage();
+});
 
 describe('kidsUp, Registration page, Test Cases R-1, R-1, R-3', () => {
-    const registerPageObject = new RegisterPage();
-
     it('should have the correct title - R-1', () => {
         browser.url('/register');
         const title = browser.getTitle();
