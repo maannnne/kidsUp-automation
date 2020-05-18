@@ -1,6 +1,6 @@
 
 const assert = require('assert');
-const Meteor = require('meteor');
+
 let RegisterPage;
 let RegisterData;
 let registerDataObject;
@@ -18,17 +18,14 @@ describe('kidsUp, Registration page, Test Case R-4', () => {
     it('Trying to register, should successfully register only after iteration 5', () => {        
         const testEmailValid = registerDataObject.getTestEmailValid();
         const testEmailInvalid1 =  registerDataObject.getTestEmailInvalid1();
-
         const testName = registerDataObject.getTestName();
-
         const testPass = registerDataObject.getTestPass();
-
-        const testConfPassValid = registerDataObject.getConfPassValid();    
-
+        const testConfPassValid = registerDataObject.getConfPassValid();   
         const testConfPassInvalid = registerDataObject.getConfPassInvalid();
 
         browser.url('/register');
 
+    
         //iteration 1
         registerPageObject.setEmail(testEmailInvalid1);
         registerPageObject.setName(testName);
@@ -55,8 +52,10 @@ describe('kidsUp, Registration page, Test Case R-4', () => {
         //iteration 5
         registerPageObject.setConfPass(testConfPassValid);
         registerPageObject.clickOnRegisterButton();
+
         const title = browser.getTitle();
         const SBTitle = registerPageObject.getSBWelcomePageTitle();
+
         assert.equal(title, SBTitle);
     });
 });

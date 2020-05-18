@@ -1,4 +1,5 @@
 const Base  = require('../pageObjects/base.page').default;
+
 module.exports['default'] = class Register extends Base{
     constructor() {
         super();
@@ -7,7 +8,7 @@ module.exports['default'] = class Register extends Base{
     //selectors as getter functions
     get regPageHeader() {return $('[name="regPageHeader"]')};
     get newUserEmail() {return $('[name="newUserEmail"]');}
-    get newUserName() { return $('[name="newUserName"]')};
+    get newUserName() {return $('[name="newUserName"]')};
     get newUserPass() {return $('[name="newUserPassword"]')};
     get newUserConfPass() {return $('[name="confirmPassword"]')};
     get registerButton() {return $('[name="registerButton"]')};
@@ -17,8 +18,6 @@ module.exports['default'] = class Register extends Base{
     get langArm() {return $('[class="dropdown-item arm-lang"]')};
     get langEng() {return $('[class="dropdown-item eng-lang"]')};
 
-
-
     //should be-s
     get SBRegPageHeaderArm() {return 'KidsUp! Ստեղծի՛ր քո նոր հաշիվը'};
     get SBRegPageHeaderEng() {return 'Create your brand new profile in KidsUp!'};
@@ -26,7 +25,6 @@ module.exports['default'] = class Register extends Base{
     get SBLoginPageTitle() {return 'Login'};
     get SBWelcomePageTitle() {return 'Home'};
     get SBHaveAccMessage() {return 'Already have an account? Log In!'};
-
 
     //should be methods
     getSBRegPageHeaderArm() {
@@ -48,10 +46,6 @@ module.exports['default'] = class Register extends Base{
         return this.SBWelcomePageTitle;
     }
 
-
-
-
-
     //methods
     getRegPageHeader() {
         this.regPageHeader.waitForExist();
@@ -65,11 +59,11 @@ module.exports['default'] = class Register extends Base{
         return browser.$(this.haveAccMessage).getText();
     };
 
-    setEmail(email) {
+   setEmail(email) {
         this.newUserEmail.waitForExist();
         this.newUserEmail.setValue(email);
         //browser.pause(1000);
-    };
+    }; 
 
     setName(name) {
         this.newUserName.waitForExist();
@@ -92,34 +86,30 @@ module.exports['default'] = class Register extends Base{
     clickOnRegisterButton() {
         this.registerButton.waitForExist();
         this.registerButton.click();
-        //browser.pause(1000);
+        browser.pause(1000);
     };
 
     clickOnLanguageButton() {
         this.languageButton.waitForExist();
         this.languageButton.click();
-        //browser.pause(1000);
+        browser.pause(1000);
     };
 
     setLangToArm() {
         this.langArm.waitForExist();
         this.langArm.click();
-        //browser.pause(1000);
+        browser.pause(1000);
     };
 
     setLangToEng() {
         this.langEng.waitForExist();
         this.langEng.click();
-        //browser.pause(1000);
+        browser.pause(1000);
     };
 
     clickOnLoginLink() {
         this.loginLink.waitForExist();
         this.loginLink.click();
-        //browser.pause(1000);
-    }
-
-
-    
-
+        browser.pause(1000);
+    };
 }

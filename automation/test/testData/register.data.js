@@ -5,10 +5,10 @@ module.exports['default'] = class RegisterData extends Base{
     }
 
     //test data as getter functions
-    get testEmailValid() {return 'testEmail11@test.com'};
-    get testEmailInvalid1() {return 'testtesttest'};
-    get testEmailInvalid2() {return 'testtest@'};
-    get testName() {return 'testName11'};
+    get testEmailValid() {return 'testEmail@test.com'};
+    get testEmailInvalid1() {return 'test'};
+    get testEmailInvalid2() {return 'test@'};
+    get testName() {return 'testName111'};
     get testPass() {return 'testPass'};
     get confPassValid() {return 'testPass'};
     get confPassInvalid() {return 'testPasssssssss'};
