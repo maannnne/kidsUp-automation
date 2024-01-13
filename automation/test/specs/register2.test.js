@@ -1,4 +1,3 @@
-
 const assert = require('assert');
 
 let RegisterPage;
@@ -65,5 +64,3 @@ describe('kidsUp, Registration page, Test Case R-4', () => {
 //     var currentUser = Meteor.userId();
 //     Meteor.call('removeUser', currentUser);
 // });
-
-//please remove the user after iteration 5
